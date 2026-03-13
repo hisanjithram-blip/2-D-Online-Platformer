@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D Platformer Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <canvas id="gameCanvas" width="1000" height="600"></canvas>
+    
+    <!-- Title Screen -->
+    <div id="titleScreen" class="menu">
+        <h1>Platform Quest</h1>
+        <div class="title-container">
+            <img src="platformer-hero.svg" alt="Platformer Hero" class="title-image">
+            <div class="menu-content title-content">
+                <p class="subtitle">Master the platforms. Conquer the levels.</p>
+                <button id="startButton" class="start-btn">Start Game</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Level Select Menu -->
+    <div id="levelSelectMenu" class="menu">
+        <h1>Platformer Game</h1>
+        <div class="menu-content">
+            <h2>Select Level</h2>
+            <button id="customizeButton" class="customize-btn">Customize Player</button>
+            <div id="levelGrid" class="level-grid"></div>
+            <button id="restartGameButton" class="restart-game-btn">Restart Game</button>
+            <button id="backButton" class="back-btn">Back</button>
+        </div>
+    </div>
+
+    <!-- Player Customization Menu -->
+    <div id="customizeMenu" class="menu">
+        <h1>Customize Player</h1>
+        <div class="menu-content">
+            <div class="customization-section">
+                <label>Player Color:</label>
+                <div class="color-picker">
+                    <button class="color-btn" data-color="#FF6B6B" style="background: #FF6B6B;" title="Red"></button>
+                    <button class="color-btn" data-color="#4ECDC4" style="background: #4ECDC4;" title="Teal"></button>
+                    <button class="color-btn" data-color="#FFE66D" style="background: #FFE66D;" title="Yellow"></button>
+                    <button class="color-btn" data-color="#95E1D3" style="background: #95E1D3;" title="Mint"></button>
+                    <button class="color-btn" data-color="#A8D8EA" style="background: #A8D8EA;" title="Blue"></button>
+                    <button class="color-btn" data-color="#AA96DA" style="background: #AA96DA;" title="Purple"></button>
+                </div>
+            </div>
+            
+            <div class="customization-section">
+                <label>Player Size:</label>
+                <div class="size-picker">
+                    <button class="size-btn" data-size="small">Small</button>
+                    <button class="size-btn" data-size="normal" data-selected="true">Normal</button>
+                    <button class="size-btn" data-size="large">Large</button>
+                </div>
+            </div>
+
+            <div class="customization-section">
+                <label>Player Name:</label>
+                <input type="text" id="playerName" placeholder="Enter your name" maxlength="20">
+            </div>
+
+            <div class="preview-section">
+                <p>Preview:</p>
+                <canvas id="previewCanvas" width="100" height="100"></canvas>
+            </div>
+
+            <button id="confirmCustomizeButton" class="confirm-btn">Confirm & Play</button>
+        </div>
+    </div>
+
+    <!-- Game UI -->
+    <div id="gameUI" class="game-ui">
+        <div class="ui-header">
+            <div>Level: <span id="levelNumber">1</span></div>
+            <div>Lives: <span id="lives">3</span></div>
+            <div>Coins: <span id="coins">0</span></div>
+            <div id="playerDisplay"></div>
+        </div>
+        <button id="pauseButton" class="pause-btn">Pause</button>
+        <div id="levelInfo" class="level-info"></div>
+    </div>
+
+    <!-- Pause Menu -->
+    <div id="pauseMenu" class="menu">
+        <h1>Paused</h1>
+        <div class="menu-content">
+            <button id="resumeButton" class="menu-btn">Resume</button>
+            <button id="restartLevelButton" class="menu-btn">Restart Level</button>
+            <button id="levelSelectButton" class="menu-btn">Level Select</button>
+            <button id="customizeButtonPause" class="menu-btn">Customize Player</button>
+        </div>
+    </div>
+
+    <!-- Game Over Menu -->
+    <div id="gameOverMenu" class="menu">
+        <h1 id="gameOverTitle">Game Over</h1>
+        <div class="menu-content">
+            <p id="gameOverMessage"></p>
+            <button id="restartLevelButton2" class="menu-btn">Retry Level</button>
+            <button id="levelSelectButton2" class="menu-btn">Level Select</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
