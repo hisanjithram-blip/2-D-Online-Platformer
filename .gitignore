@@ -1,0 +1,31 @@
+# System files
+desktop.ini
+.DS_Store
+Thumbs.db
+
+# Node modules (if using npm)
+node_modules/
+package-lock.json
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+*.lnk
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# Build and dist
+dist/
+build/
+
+# Environment files
+.env
+.env.local
